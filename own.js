@@ -47,7 +47,7 @@ let tr = 0;
 
 
 let nam = document.getElementById('na');
-var gmail = document.getElementById('em');
+var sub1 = document.getElementById('sub1');
 var subject = document.getElementById('sub');
 var button = document.getElementById('but');
 let perrror = document.getElementById('perror');
@@ -55,11 +55,16 @@ let perrror = document.getElementById('perror');
 button.onclick = function(){
 if(nam.value !=''){
     perrror.innerHTML = '';
-    if(subject.value != ''){
+    if(sub1.value != ''){
         perrror.innerHTML = '';
-        window.open('mailto:ibrahimsalama281@gmail.com?subject='+subject.value+'&body=body');
+      if(subject.value != ''){
+        perrror.innerHTML = '';
+        window.open('mailto:ibrahimsalama281@gmail.com?subject='+subject.value+'&body='+sub1.value);
+      }else{
+        perrror.innerHTML = 'Put your body!';
+      }
     }else{
-        perrror.innerHTML = 'Put your subject!';
+      perrror.innerHTML = 'Put your subject!'
     }
 }else{
     perrror.innerHTML = 'Put your name!';
